@@ -1,0 +1,25 @@
+{
+    "name": "real-home",
+    "authors": [
+        "Zaharakatd22 <zaharakatd22@gmail.com>"
+    ],
+    "dependencies":
+    {
+        "jquery": "latest",
+        "animate.css": "latest",
+        "slick-slide": "latest",
+        "WOW": "latest"
+    },
+    "description": "site",
+    "main": "index.html",
+    "license": "MIT",
+    "homepage": "https://github.com/Zaharakatd22/RealHome",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
