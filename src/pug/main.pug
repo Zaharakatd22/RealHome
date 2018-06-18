@@ -1,1 +1,9 @@
+- var sliderTitle = ['120 Anastasia Avenue, Coral Gables', '130 Milana Avenue, Green Street', '780 Marina Avenue, Green Street', '137 Lada Avenue, Yelloy Street'];
+- var sliderPrice = ['$325,000', '$778,900', '$625,000', '$579,000'];
 main.main
+	.main-slider
+		- for(var i=0; i < 4; i++)
+			div.main-slider__item
+				h1.main-slider__title=`${sliderTitle[i]}`
+				span.main-slider__price=`${sliderPrice[i]}`
+				a(href="#").btn.main-slider__btn More info
