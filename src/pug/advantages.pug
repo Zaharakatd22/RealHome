@@ -1,1 +1,13 @@
+- var advantagesTitle = ['', 'Whole World', 'Confidentially', 'Good Previews', 'Confidentially'];
 section.advantages
+	.container
+		.advantages-items
+			- for(var i = 1; i < 5; i++)
+				.advantages-item
+					.advantages-item__icon
+						img(src=`img/advantages/icon-${i}.svg` alt=`Иконка №${i}`)
+					.advantages-item__title
+							h3=`${advantagesTitle[i]}`
+					.advantages-item__descr
+						p Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor.
+
