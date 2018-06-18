@@ -69,7 +69,7 @@ gulp.task('pug', function() {
       .pipe(gulp.dest("src/"))
 });
 gulp.task('minhtml', function() {
-    return gulp.src("src/")
+    return gulp.src("src/*.html")
         .pipe(rev())
         .pipe(htmlmin({
                 collapseWhitespace: true,
