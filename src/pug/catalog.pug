@@ -3,7 +3,7 @@
 - var CatalogBlockPrice = ['', '$250,000', '$200,000', '$339,000', '$250,000', '$200,000', '$339,000'];
 section.catalog
 	.container
-		.section-title.catalog__title
+		.section-title.catalog__title.section-title
 			h2 Featured Properties
 		.catalog__text 
 			p Quisque diam lorem interdum vitaapibus vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar.
@@ -19,4 +19,6 @@ section.catalog
 					.catalog-block__price=`${CatalogBlockPrice[i]}`
 					.catalog-block__descr
 						ul.catalog-block__descr-items
-							li.catalog-block__descr-item
+								li.catalog-block__descr-item="3400 Sq Ft"
+								li.catalog-block__descr-item="2 Bedrooms"
+								li.catalog-block__descr-item="1 Bathroom"

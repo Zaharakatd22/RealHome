@@ -1,1 +1,11 @@
+- var testimonialsText=['Liber tempor cum soluta eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum, typin no habent claritatem insitam legentis qui facit eorum claritatem.', 'Liber tempor cum soluta eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum, typin no habent claritatem insitam legentis qui facit eorum claritatem.', 'Liber tempor cum soluta eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum, typin no habent claritatem insitam legentis qui facit eorum claritatem.', 'Liber tempor cum soluta eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum, typin no habent claritatem insitam legentis qui facit eorum claritatem.'];
+- var testimonialsAuthor=['Maty Raedy, Facebook', 'Amanda Seyfried, Apple', 'John Laude, Google', 'Marina Slouk, Instagram'];
 section.testimonials
+	.container
+		.testimonials-title.section-title
+		.testimonials-slider
+			- for(var i = 0; i < 4; i++)
+				.testimonials-slider__item
+					.testimonials-slider__item-text
+						p=`${testimonialsText[i]}`
+					.testimonials-slider__item-author=`${testimonialsAuthor[i]}`

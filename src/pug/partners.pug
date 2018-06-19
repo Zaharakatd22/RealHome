@@ -1,1 +1,9 @@
+- var partners=['', 'TechStar Company', 'Swan dolor sit a met', 'AudioPro', 'Strongwave'];
 section.partners
+	.container
+		.partners-title Our
+			span Partners
+		.partners-images
+			- for(var i = 1; i < 5; i++)
+				.partners-images__img
+					img(src=`img/partners/partners-logo-${i}.png` alt=`${partners[i]}`)

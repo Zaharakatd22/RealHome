@@ -1,1 +1,33 @@
+- var menu = ['Home', 'About Us', 'Property', 'Gallery', 'Our Blog', 'Contacts'];
+- var menuForclients = ['Sign in', 'Forum', 'Promotions', 'News'];
+- var contact = ['', 'Facebook', 'Pinterest', 'Instagram', 'Google Plus'];
 footer.footer
+	.container
+		.footer-logo-contact
+			.footer-logo-contact__logo
+				img(alt="RealHome" src="img/footer/footer-logo.png")
+			.footer-logo-contact__contact
+				- for(var i = 1; i <= 4; i++)
+					.footer-logo-contact__contact-item
+						img(src=`img/header/contact-icon-${i}.svg` alt=`${contact[i]}`)
+		.footer-menu
+			.footer-menu__title
+				h2="Navigation"
+			ul
+				- for(var i = 0; i < 6; i++)
+					li=`${menu[i]}`
+		.footer-forclients
+			.footer-forclients__title
+				h2="For clients"
+			ul
+				- for(var i = 0; i < 4; i++)
+					li=`${menuForclients[i]}`
+		.footer-contact
+			.footer-contact__title
+				h2="Contact us"
+			.footer-contact__text
+				.footer-contact__text-adress 240 Central Park, London OR 10019
+				.footer-contact__text-freephone Freephone: +1 800 559 6580
+				.footer-contact__text-telephone Telephone: +1 959 603 6035
+				.footer-contact__text-fax FAX: +1 800 559 6580
+				.footer-contact__text-email info@realhome.com
