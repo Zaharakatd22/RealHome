@@ -78,6 +78,7 @@ gulp.task('minhtml', function() {
                 removeAttributeQuotes: true,
                 removeRedundantAttributes: true
             }))
+        .pipe(rename("index.html"))
         .pipe(gulp.dest("dist/"))
         .pipe(notify('Html минимизирован'));
 })
