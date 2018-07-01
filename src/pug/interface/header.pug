@@ -1,13 +1,15 @@
 - var menu = ['Home', 'About Us', 'Property', 'Our Blog', 'Contacts'];
 - var contact = ['', 'Facebook', 'Pinterest', 'Instagram', 'Google Plus'];
+- var menuLink = ['', 'about.html', 'property.html', 'blog.html', 'contacts.html']
 header.header
 	.container
 		.header__logo
 			img(alt="RealHome" src="img/header/logo.png")
 		nav.header__menu
 			ul
-				- for (var i = 0; i < 5; i++)
-					li=`${menu[i]}`
+				- for (var i = 0; i <= 4; i++)
+					li
+						a(href=`http://localhost:3000/${menuLink[i]}`)=`${menu[i]}`
 		.header__contacts
 			- for (var i = 1; i <= 4; i++)
 				.contacts__item
