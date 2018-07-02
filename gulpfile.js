@@ -46,7 +46,7 @@ gulp.task('sass', function() {
         .pipe(plumber())
         .pipe(gulp.dest("src/css"))
         .pipe(sourcemaps.write())
-        .pipe(browserSync.reload());
+        .pipe(browserSync.stream());
 });
 gulp.task('pug', function() {
     var options = {
@@ -59,7 +59,7 @@ gulp.task('pug', function() {
             'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
         ]
     };
-  return gulp.src("src/pug/blog/blog.pug")
+  return gulp.src("src/pug/blog.pug")
        .pipe(plumber({
           errorHandler: notify.onError()
        }))
@@ -67,7 +67,7 @@ gulp.task('pug', function() {
       .pipe(concat('blog.html'))
       .pipe(htmlbeautify(options))
       .pipe(gulp.dest("src/"))
-      .pipe(browserSync.reload());
+      .pipe(browserSync.stream());
 });
 gulp.task('minhtml', function() {
     return gulp.src("src/*.html")
