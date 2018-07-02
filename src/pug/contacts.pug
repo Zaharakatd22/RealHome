@@ -7,7 +7,9 @@ html(lang="en")
 			h1 Our <span>Contacts</span>
 		include contacts-bread-crumbs.pug
 		include contats-map.pug
-		include contacts-info.pug
-		include contacts-form.pug
+		section.contacts-information
+			.container
+				include contacts-info.pug
+				include contacts-form.pug
 		include footer.pug
 		include scripts.pug
