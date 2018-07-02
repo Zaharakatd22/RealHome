@@ -1,0 +1,61 @@
+-var postsTitle = ['Point of Architecture', 'Aliquam Erat Volutpat', 'Mauris Posuere']
+- var Categories = ['Art Direction', 'Digital Photography', 'Information Architecture', 'Interior Design', 'Motion Graphics', 'Photoshop Tools', 'Web Design'];
+- var Archives = ['May 2014', 'March 2013', 'February 2013', 'January 2013', 'December 2012', 'May 2012'];
+- var RecentPostsTitle = ['Aliquam erat volutpat', 'Mauris posuere'];
+- var RecentPostsText = ['Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Proin dictum elem entum velit fusce.', 'Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. umcorper urna et felisstibulum iaculis.'];
+- var RecentPostsDate = ['May 27, 2014', 'January 12, 2015'];
+section.blog-content
+	.container
+		.blog-content__posts
+			- for(var i = 0; i < 3; i++)
+				.blog-content__posts-item
+					.blog-content__posts-title
+						h2=`${postsTitle[i]}`
+					.blog-content__posts-photo
+						img(src=`img/blogContentPost/post-img-${i + 1}.jpg` alt=`Photo №${[i + 1]}`)
+					.blog-content__posts-descr
+						p Vitapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Lorem sitamet, consetetur sadipscing elitr.
+					.blog-content__posts-btn.btn
+						a(href="#") Read More
+		.blog-content__sidebar
+				.blog-content__sidebar-item
+					.blog-content__sidebar-title
+						h3 Categories
+					.blog-content__sidebar-menu
+						ul
+							- for(var i = 0; i < 7; i++)
+								li
+									a(href="#")=`${Categories[i]}`
+				.blog-content__sidebar-item
+					.blog-content__sidebar-title
+						h3 Archives
+					.blog-content__sidebar-menu
+						ul
+							- for(var i = 0; i < 6; i++)
+								li
+									a(href="#")=`${Archives[i]}`
+				.blog-content__sidebar-item
+					.blog-content__sidebar-title
+						h3 Recent Posts
+					.blog-content__sidebar-menu
+						ul
+							- for(var i = 0; i < 2; i++)
+								li
+									.blog-content__sidebar-subtitle
+										h4=`${RecentPostsTitle[i]}`
+									.blog-content__sidebar-text
+										p=`${RecentPostsText[i]}`
+									.blog-content__sidebar-date=`${RecentPostsDate[i]}`
+		.blog-content__pagination
+			.blog-content__pagination-item
+				.blog-content__pagination-btn.btn
+					button=`1`
+			.blog-content__pagination-item
+				.blog-content__pagination-btn.btn.blog-content__pagination-btn_active-color
+					button=`2`
+			.blog-content__pagination-item
+				.blog-content__pagination-btn.btn
+					button=`3`
+			.blog-content__pagination-item
+				.blog-content__pagination-btn.btn
+					button=`4`

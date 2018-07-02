@@ -59,12 +59,12 @@ gulp.task('pug', function() {
             'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
         ]
     };
-  return gulp.src("src/pug/index.pug")
+  return gulp.src("src/pug/blog.pug")
        .pipe(plumber({
           errorHandler: notify.onError()
        }))
       .pipe(pug())
-      .pipe(concat('index.html'))
+      .pipe(concat('blog.html'))
       .pipe(htmlbeautify(options))
       .pipe(gulp.dest("src/"))
       .pipe(browserSync.stream());
