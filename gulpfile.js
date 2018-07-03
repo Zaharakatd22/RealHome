@@ -43,7 +43,9 @@ gulp.task('sass', function() {
         }))
         .pipe(concatCSS("style.css"))
         .pipe(csscomb())
-        .pipe(plumber())
+        .pipe(plumber({
+          errorHandler: notify.onError()
+        }))
         .pipe(gulp.dest("src/css"))
         .pipe(sourcemaps.write())
         .pipe(browserSync.stream());
@@ -59,12 +61,12 @@ gulp.task('pug', function() {
             'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
         ]
     };
-  return gulp.src("src/pug/contacts.pug")
-       .pipe(plumber({
+  return gulp.src("src/pug/blog-post-1.pug")
+      .pipe(plumber({
           errorHandler: notify.onError()
-       }))
+      }))
       .pipe(pug())
-      .pipe(concat('contacts.html'))
+      .pipe(concat('blog-post-1.html'))
       .pipe(htmlbeautify(options))
       .pipe(gulp.dest("src/"))
       .pipe(browserSync.stream());
