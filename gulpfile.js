@@ -1,24 +1,24 @@
-var gulp            = require('gulp');
-var browserSync     = require('browser-sync').create();
-var sass            = require('gulp-sass');
-var pug             = require('gulp-pug');
-var autoprefixer    = require('gulp-autoprefixer');
-var concatCSS       = require('gulp-concat-css');
-var concat          = require('gulp-concat');
-var cleanCSS        = require('gulp-clean-css');
-var csscomb         = require('gulp-csscomb');
-var rename          = require("gulp-rename");
-var uglify          = require('gulp-uglify');
-var autopolyfiller  = require('gulp-autopolyfiller');
-var htmlbeautify    = require('gulp-html-beautify');
-var uncss           = require('gulp-uncss');
-var sourcemaps      = require('gulp-sourcemaps');
-var plumber         = require('gulp-plumber');
-var imagemin        = require('gulp-imagemin');
-var notify          = require("gulp-notify");
-var htmlmin         = require('gulp-htmlmin');
-var rev             = require('gulp-rev');
-var ftp             = require('gulp-ftp');
+var gulp           = require('gulp');
+var browserSync    = require('browser-sync').create();
+var sass           = require('gulp-sass');
+var pug            = require('gulp-pug');
+var autoprefixer   = require('gulp-autoprefixer');
+var concatCSS      = require('gulp-concat-css');
+var concat         = require('gulp-concat');
+var cleanCSS       = require('gulp-clean-css');
+var csscomb        = require('gulp-csscomb');
+var rename         = require("gulp-rename");
+var uglify         = require('gulp-uglify');
+var autopolyfiller = require('gulp-autopolyfiller');
+var htmlbeautify   = require('gulp-html-beautify');
+var uncss          = require('gulp-uncss');
+var sourcemaps     = require('gulp-sourcemaps');
+var plumber        = require('gulp-plumber');
+var imagemin       = require('gulp-imagemin');
+var notify         = require("gulp-notify");
+var htmlmin        = require('gulp-htmlmin');
+var rev            = require('gulp-rev');
+var ftp            = require('gulp-ftp');
 gulp.task('serve', ['sass','pug'],  function() {
     browserSync.init({
         server: "src/"
@@ -62,17 +62,17 @@ gulp.task('pug', function() {
         ]
     };
   return gulp.src("src/pug/blog-post-1.pug")
-      .pipe(plumber({
+        .pipe(plumber({
           errorHandler: notify.onError()
-      }))
-      .pipe(pug())
-      .pipe(concat('blog-post-1.html'))
-      .pipe(htmlbeautify(options))
-      .pipe(gulp.dest("src/"))
-      .pipe(browserSync.stream());
+        }))
+        .pipe(pug())
+        .pipe(concat('blog-post-1.html'))
+        .pipe(htmlbeautify(options))
+        .pipe(gulp.dest("src/"))
+        .pipe(browserSync.stream());
 });
 gulp.task('minhtml', function() {
-    return gulp.src("src/*.html")
+    return gulp.src("src/")
         .pipe(rev())
         .pipe(htmlmin({
                 collapseWhitespace: true,

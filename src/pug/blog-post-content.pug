@@ -13,4 +13,32 @@ section.post-content
 			.post-text__subtitle
 				h2 Architect Can Advise To Plant Vines
 			p.post-text__paragraph=`Vitapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Lorem sitamet, consetetur sadipscing elitr.`
-			p.post-text__paragraph=`Suspendisse sapien lectus, tristique a maximus eget, sagittis sit amet erat. Morbi scelerisque sem risus, nec dictum leo auctor et. Etiam volutpat eros dui, non rutrum justo finibus nec. Nulla facilisi. Phasellus sit amet dui felis. Quisque lorem dolor, molestie id felis eu, rutrum imperdiet ante. Aliquam eu turpis eget magna suscipit pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae diam eu sem luctus malesuada. Nullam volutpat augue a pulvinar viverra. Praesent convallis dolor quis lectus sagittis, vel venenatis sem vulputate.` 
+			p.post-text__paragraph=`Suspendisse sapien lectus, tristique a maximus eget, sagittis sit amet erat. Morbi scelerisque sem risus, nec dictum leo auctor et. Etiam volutpat eros dui, non rutrum justo finibus nec. Nulla facilisi. Phasellus sit amet dui felis. Quisque lorem dolor, molestie id felis eu, rutrum imperdiet ante. Aliquam eu turpis eget magna suscipit pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae diam eu sem luctus malesuada. Nullam volutpat augue a pulvinar viverra. Praesent convallis dolor quis lectus sagittis, vel venenatis sem vulputate.`
+		.blog-content__sidebar-item
+				.blog-content__sidebar-title
+					h3 Categories
+				.blog-content__sidebar-menu
+					ul
+						- for(var i = 0; i < 7; i++)
+							li
+								a(href="#")=`${Categories[i]}`
+		.blog-content__sidebar-item
+			.blog-content__sidebar-title
+				h3 Archives
+			.blog-content__sidebar-menu
+				ul
+					- for(var i = 0; i < 6; i++)
+						li
+							a(href="#")=`${Archives[i]}`
+		.blog-content__sidebar-item
+			.blog-content__sidebar-title
+				h3 Recent Posts
+			.blog-content__sidebar-menu
+				ul
+					- for(var i = 0; i < 2; i++)
+						li
+							.blog-content__sidebar-subtitle
+								h4=`${RecentPostsTitle[i]}`
+							.blog-content__sidebar-text
+								p=`${RecentPostsText[i]}`
+							.blog-content__sidebar-date=`${RecentPostsDate[i]}`
