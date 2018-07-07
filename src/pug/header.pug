@@ -7,11 +7,11 @@ header.header
 			img(alt="RealHome" src="img/header/logo.png")
 		nav.header__menu
 			ul
-				- for (var i = 0; i <= 4; i++)
+				- for(var i = 0; i <= 4; i++)
 					li
 						a(href=`http://localhost:3000/${menuLink[i]}`)=`${menu[i]}`
 		.header__contacts
-			- for (var i = 1; i <= 4; i++)
+			- for(var i = 1; i <= 4; i++)
 				.contacts__item
 					img(src=`img/header/contact-icon-${i}.svg` alt=`${contact[i]}`)
 

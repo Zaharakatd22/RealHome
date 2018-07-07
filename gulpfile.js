@@ -43,9 +43,7 @@ gulp.task('sass', function() {
         }))
         .pipe(concatCSS("style.css"))
         .pipe(csscomb())
-        .pipe(plumber({
-          errorHandler: notify.onError()
-        }))
+        .pipe(plumber())
         .pipe(gulp.dest("src/css"))
         .pipe(sourcemaps.write())
         .pipe(browserSync.stream());
@@ -62,9 +60,7 @@ gulp.task('pug', function() {
         ]
     };
   return gulp.src("src/pug/blog-post-1.pug")
-        .pipe(plumber({
-          errorHandler: notify.onError()
-        }))
+        .pipe(plumber())
         .pipe(pug())
         .pipe(concat('blog-post-1.html'))
         .pipe(htmlbeautify(options))
@@ -84,7 +80,7 @@ gulp.task('minhtml', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("dist/"))
         .pipe(notify('Html минимизирован'));
-})
+});
 gulp.task('mincss', function() {
     return gulp.src("src/css/*.css")
         .pipe(rev())
@@ -93,7 +89,7 @@ gulp.task('mincss', function() {
         .pipe(plumber())
         .pipe(gulp.dest("dist/css"))
         .pipe(notify('Css минимизирован'));
-})
+});
 gulp.task('minjs', function() {
     return gulp.src("src/js/*.js")
         .pipe(autopolyfiller('src/js/main.js'))
@@ -103,7 +99,7 @@ gulp.task('minjs', function() {
         .pipe(plumber())
         .pipe(gulp.dest("dist/js"))
         .pipe(notify('Javascript минимизирован'));
-})
+});
 gulp.task('minimg', function() {
     return gulp.src('src/img/**/*')
         .pipe(imagemin([
@@ -120,7 +116,7 @@ gulp.task('minimg', function() {
         .pipe(plumber())
         .pipe(gulp.dest("dist/img"))
         .pipe(notify('Изображения минимизированы'));
-})
+});
 gulp.task('ftp', function(){
 	return gulp.src('src/**')
 	.pipe(ftp({
